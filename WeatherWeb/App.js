@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +10,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import ReportScreen from './screens/ReportScreen';
 import VolunteerScreen from './screens/VolunteerScreen';
-import InfrastructureDetailScreen from './screens/InfrastructureDetailScreen';
+import Infrastructure from './screens/Infrastructure';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -39,12 +38,10 @@ function MainTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
-        <Stack.Screen name="InfrastructureDetail" component={InfrastructureDetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+      <Stack.Screen name="Infrastructure" component={Infrastructure} />
+    </Stack.Navigator>
   );
 }
