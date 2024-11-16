@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
+import mapComponent from '../WeatherWeb/components/MapComponent.js';
 
 // Import screens
 import HomeScreen from './screens/HomeScreen';
@@ -11,6 +12,7 @@ import LoginScreen from './screens/LoginScreen';
 import ReportScreen from './screens/ReportScreen';
 import VolunteerScreen from './screens/VolunteerScreen';
 import Infrastructure from './screens/Infrastructure';
+import 'leaflet/dist/leaflet.css';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
