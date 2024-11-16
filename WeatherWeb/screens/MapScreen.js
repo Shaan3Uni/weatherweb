@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import MapComponent from '@/components/MapComponent';
 
 const MapScreen = () => (
   <View style={styles.container}>
-    <Text>Map Screen</Text>
+    <MapComponent />
   </View>
 );
 
