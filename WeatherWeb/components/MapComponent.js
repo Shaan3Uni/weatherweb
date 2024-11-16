@@ -25,10 +25,10 @@ const MapComponent = () => {
 
         // Initialize icons
         const icons = {
-          1: leaflet.icon({ iconUrl: blackIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-          2: leaflet.icon({ iconUrl: redIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-          3: leaflet.icon({ iconUrl: yellowIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-          4: leaflet.icon({ iconUrl: greenIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
+          4: leaflet.icon({ iconUrl: blackIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
+          3: leaflet.icon({ iconUrl: redIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
+          2: leaflet.icon({ iconUrl: yellowIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
+          1: leaflet.icon({ iconUrl: greenIconUrl, iconSize: [25, 25], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
         };
         setCustomIcons(icons);
       });
@@ -46,7 +46,7 @@ const MapComponent = () => {
         const description = prompt('Please give a brief description of your emergency:');
 
         if (name && phone && sev && description) {
-          const newMarker = createMarker(lat, lng, name, phone, parseInt(sev)+1, description);
+          const newMarker = createMarker(lat, lng, name, phone, parseInt(sev), description);
           setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
         }
       },
