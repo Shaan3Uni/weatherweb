@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
-import mapComponent from '../WeatherWeb/components/MapComponent.js';
 
 // Import screens
 import HomeScreen from './screens/HomeScreen';
@@ -12,7 +11,7 @@ import LoginScreen from './screens/LoginScreen';
 import ReportScreen from './screens/ReportScreen';
 import VolunteerScreen from './screens/VolunteerScreen';
 import Infrastructure from './screens/Infrastructure';
-import 'leaflet/dist/leaflet.css';
+import DonateScreen from './screens/DonateScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -43,6 +42,9 @@ export default function App() {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+      <Stack.Screen name="VolunteerScreen" component={VolunteerScreen} />
+      <Stack.Screen name="DonateScreen" component={DonateScreen} />
+      <Stack.Screen name="ReportScreen" component={ReportScreen} />
       <Stack.Screen name="Infrastructure" component={Infrastructure} />
     </Stack.Navigator>
   );
